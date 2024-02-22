@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <style>
+      a.test {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://jquery.com/">JQuery</a>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+      window.onload = function () {
+        alert("welcome");
+      };
+
+      $(document).ready(function () {
+        $("a").click(function (event) {
+          alert("As you can see, the link longer took you to jquery.com");
+          event.preventDefault();
+        });
+      });
+
+      $("a").addClass("test");
+      $("a").removeClass("test");
+      $("a").click(function (event) {
+        event.preventDefault();
+        $(this).hide("slow");
+      });
+    </script>
+  </body>
+</html>
